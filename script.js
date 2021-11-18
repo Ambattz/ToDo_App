@@ -1,16 +1,16 @@
 var tcount = 0;
 var ccount = 0;
 // Get the input field
-function en(event){
+function en(event) {
   if (event.key == "Enter") {
     event.preventDefault();
     document.getElementById("button-addon2").click();
   }
 }
 
-function enter(){
+function enter() {
   var inputt = document.getElementById("input");
-  inputt.addEventListener("keyup",en);
+  inputt.addEventListener("keyup", en);
   /*inputt.addEventListener("keyup", function(event) {
     if (event.key == "Enter") {
       event.preventDefault();
@@ -19,7 +19,6 @@ function enter(){
     inputt.removeEventListener;
   });*/
 }
-
 
 function add() {
   var user_input = document.getElementById("input").value;
@@ -64,9 +63,16 @@ function clear_input() {
 }
 
 function remove_entry(inp) {
-  console.log(inp.parentElement.parentElement.getElementsByTagName("h3")[0]);
-  var ser_input = document.getElementById("task").textContent;
-  ser_input = ser_input.substring(0, ser_input.length - 6);
+  console.log(
+    inp.parentElement.parentElement.parentElement.getElementsByTagName(
+      "div"
+    )[1],
+    inp.parentNode
+  );
+  //var ser_input = document.getElementById("task").textContent;
+  var ser_input =
+    inp.parentElement.parentElement.getElementsByTagName("h3")[0].innerHTML;
+  //ser_input = ser_input.substring(0, ser_input.length - 6);
 
   tcount = tcount - 1;
   if (tcount == 0) {
@@ -74,7 +80,7 @@ function remove_entry(inp) {
     function alert(message, type) {
       var wrapper = document.createElement("div");
       wrapper.innerHTML =
-        '<div class="alert alert-' +
+        '<div id="ma" class="alert alert-' +
         type +
         ' alert-dismissible" role="alert" style="  text-align: center ; background-color: #34BE82;   text-decoration-color:#54436b ;   border-radius: 15px; margin: 5px 20px 5px 20px;"> ' +
         message +
@@ -91,7 +97,8 @@ function remove_entry(inp) {
     document.getElementById("tcount").innerHTML = tcount + " TASKS PENDING";
     document.getElementById("ccount").innerHTML = ccount + " TASK DONE";
   }
-  document.getElementById("task").remove();
+  inp.parentElement.parentElement.remove();
+  //inp.parentElement.parentElement.parentElement.getElementsByTagName("div")[1].remove();
   var dprevinput = document.getElementById("ccount");
   var newinput =
     ' <div id="dtask" style=" color:#50cb93; text-decoration: line-through; margin: 5px 20px 5px 20px; text-align:center;  border-radius: 15px; background-color: #716F81;" class="row alert alert-warning back_border">' +
