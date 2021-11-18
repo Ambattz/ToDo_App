@@ -1,5 +1,26 @@
 var tcount = 0;
 var ccount = 0;
+// Get the input field
+function en(event){
+  if (event.key == "Enter") {
+    event.preventDefault();
+    document.getElementById("button-addon2").click();
+  }
+}
+
+function enter(){
+  var inputt = document.getElementById("input");
+  inputt.addEventListener("keyup",en);
+  /*inputt.addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
+      event.preventDefault();
+      document.getElementById("button-addon2").click();
+    }
+    inputt.removeEventListener;
+  });*/
+}
+
+
 function add() {
   var user_input = document.getElementById("input").value;
   if (user_input == "") {

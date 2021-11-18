@@ -25,12 +25,12 @@
     <link rel="icon" type="image/x-icon" href="favicontd.ico" />
     <title>To Do App</title>
   </head>
-  <body>
+  <body style="background-color: #acffad;">
     <div id="alert"></div>
     <div class="top">
       <div class="topinner" style="padding: 50px">
         <h1>TO DO LIST</h1>
-        <div class="input-group mb-3" style="padding: 20px 500px 20px 500px">
+        <div class="input-group mb-3" style="padding:auto; ">
           <button
             onclick="add()"
             style="color: #50cb93"
@@ -48,6 +48,7 @@
             placeholder="Add Item"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
+            onkeypress="enter()"
           />
           <button
             onclick="clear_input()"
