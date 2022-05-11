@@ -1,5 +1,6 @@
 # ToDo_App
----
+Boredom Projects | HTML, CSS, JS | Created by Ambattz | 2021 |
+
 ## ScreenShots
 .         | .
 :-------------------------:|:-------------------------:
